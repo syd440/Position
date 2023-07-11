@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_route">
+    <sys_ux_app_route action="INSERT_OR_UPDATE">
+        <app_config display_value="Position Workbench Config">ca3453df487fcd508c7d10520a79ac96</app_config>
+        <description/>
+        <extension_point/>
+        <fields>uuid</fields>
+        <icon/>
+        <name>KPI Details</name>
+        <optional_parameters>scoreDate,breakdowns,domain</optional_parameters>
+        <order>0</order>
+        <parent_macroponent display_value="Agent Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent>
+        <parent_macroponent_composition_element_id/>
+        <route_type>ac_kpi_details</route_type>
+        <screen_type display_value="KPI Details">823453df107fcd509e6dba909674fe96</screen_type>
+        <sys_class_name>sys_ux_app_route</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-05 23:25:59</sys_created_on>
+        <sys_id>023453dfba7fcd500945904e926fad96</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>KPI Details</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sys_ux_app_route_023453dfba7fcd500945904e926fad96</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-05 23:25:59</sys_updated_on>
+    </sys_ux_app_route>
+    <sys_translated_text action="delete_multiple" query="documentkey=023453dfba7fcd500945904e926fad96"/>
+</record_update>

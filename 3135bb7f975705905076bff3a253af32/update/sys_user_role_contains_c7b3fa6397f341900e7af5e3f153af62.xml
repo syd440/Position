@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_snc_position_man.potential_candidate_user" name="x_snc_position_man.potential_candidate_user">ec93726397f341900e7af5e3f153aff1</contains>
+        <role display_value="x_snc_position_man.user" name="x_snc_position_man.user">c6739f5f977fcd500e7af5e3f153af16</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-06 15:42:32</sys_created_on>
+        <sys_id>c7b3fa6397f341900e7af5e3f153af62</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_position_man.potential_candidate_user.x_snc_position_man.user</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sys_user_role_contains_c7b3fa6397f341900e7af5e3f153af62</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-06 15:42:32</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

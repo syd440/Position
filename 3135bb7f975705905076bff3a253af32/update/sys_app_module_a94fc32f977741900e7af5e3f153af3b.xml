@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Position Management">780ebb7f979705905076bff3a253af64</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Postings</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>cmn_skill</name>
+        <order>600</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-06 17:42:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a94fc32f977741900e7af5e3f153af3b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Skills</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sys_app_module_a94fc32f977741900e7af5e3f153af3b</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-06 17:42:51</sys_updated_on>
+        <timeline_page/>
+        <title>Skills</title>
+        <uncancelable>false</uncancelable>
+        <view_name>position_management</view_name>
+        <window_name/>
+    </sys_app_module>
+</record_update>

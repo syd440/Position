@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Contact Details" section_id="90ecccf797fb41900e7af5e3f153af8e" sys_domain="global" table="sys_user" version="3" view="Position_Management">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>building</element>
+            <position>0</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>4fecc03b97fb41900e7af5e3f153af63</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>street</element>
+            <position>1</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>43ecc03b97fb41900e7af5e3f153af64</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>city</element>
+            <position>2</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>47ecc03b97fb41900e7af5e3f153af64</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <position>3</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>4becc03b97fb41900e7af5e3f153af64</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>zip</element>
+            <position>4</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>4fecc03b97fb41900e7af5e3f153af64</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>country</element>
+            <position>5</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>43ecc03b97fb41900e7af5e3f153af65</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>6</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>47ecc03b97fb41900e7af5e3f153af65</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>location</element>
+            <position>7</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>4becc03b97fb41900e7af5e3f153af65</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>email</element>
+            <position>8</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>4fecc03b97fb41900e7af5e3f153af65</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>phone</element>
+            <position>9</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>43ecc03b97fb41900e7af5e3f153af66</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>mobile_phone</element>
+            <position>10</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>47ecc03b97fb41900e7af5e3f153af66</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>home_phone</element>
+            <position>11</position>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:11</sys_created_on>
+            <sys_id>4becc03b97fb41900e7af5e3f153af66</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Contact Details" display_value="Contact Details" name="sys_user" sys_domain="global" view="2381331197638d905076bff3a253af72">90ecccf797fb41900e7af5e3f153af8e</sys_ui_section>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:11</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Contact Details</caption>
+            <header>false</header>
+            <name>sys_user</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-06 22:12:00</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>90ecccf797fb41900e7af5e3f153af8e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sys_user</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+            <sys_update_name>sys_ui_section_90ecccf797fb41900e7af5e3f153af8e</sys_update_name>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-06 22:12:00</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Position Management" name="Position_Management">2381331197638d905076bff3a253af72</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

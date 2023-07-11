@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="89c431c197abc9905076bff3a253affe" label="Posting" max_length="40" name="x_snc_position_man_posting" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Candidate" max_length="32" name="candidate" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Client" max_length="32" name="client" reference="core_company" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Duration" max_length="250" name="duration" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="3 months" sequence="10" value="3 months"/>
+                <element inactive_on_update="false" label="6 months" sequence="20" value="6 months"/>
+                <element inactive_on_update="false" label="1 year" sequence="30" value="1 year"/>
+                <element inactive_on_update="false" label="3 years" sequence="40" value="3 years"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Filled" max_length="40" name="filled_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Filled on time?" max_length="40" name="filled_on_time" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" label="Fill by" max_length="40" name="fill_by_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" default="javascript: gs.getUserID();" label="Hiring manager" max_length="32" name="hiring_officer" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Industry" max_length="250" name="industry" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Position" mandatory="true" max_length="32" name="position" reference="sn_hr_core_position" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript: new GlideDate().getValue();" label="Posted" max_length="40" name="posted_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true,no_sort=true,slushbucket_ref_no_expand=true" label="Required skill(s)" max_length="1024" name="required_skills" reference="cmn_skill" type="glide_list"/>
+        <element attributes="edge_encryption_enabled=true,omit_sys_original=true" label="Salary" max_length="20" name="salary" type="currency"/>
+        <element attributes="edge_encryption_enabled=true" label="Short description" max_length="500" name="short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Start date" max_length="40" name="start_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="open" label="State" max_length="40" name="state" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Open" sequence="0" value="open"/>
+                <element inactive_on_update="false" label="Filled" sequence="1" value="filled"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Title" max_length="250" name="title" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Type" max_length="40" name="type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="On-site" sequence="10" value="on site"/>
+                <element inactive_on_update="false" label="Flexible" sequence="20" value="flexible"/>
+                <element inactive_on_update="false" label="Remote" sequence="30" value="remote"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="candidate"/>
+        </index>
+        <index name="index2">
+            <element name="client"/>
+        </index>
+        <index name="index3">
+            <element name="hiring_officer"/>
+        </index>
+        <index name="index4">
+            <element name="position"/>
+        </index>
+    </element>
+</database>

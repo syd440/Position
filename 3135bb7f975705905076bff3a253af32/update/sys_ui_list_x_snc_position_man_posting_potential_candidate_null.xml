@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_snc_position_man_posting_potential_candidate" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>display</element>
+            <list_id display_value="x_snc_position_man_posting_potential_candidate" element="NULL" name="x_snc_position_man_posting_potential_candidate" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">63cdcfce97eb81d05076bff3a253af86</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:57:09</sys_created_on>
+            <sys_id>77db99f347b34d5023bc2821e36d4341</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:57:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>posting</element>
+            <list_id display_value="x_snc_position_man_posting_potential_candidate" element="NULL" name="x_snc_position_man_posting_potential_candidate" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">63cdcfce97eb81d05076bff3a253af86</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:57:09</sys_created_on>
+            <sys_id>7fdb99f347b34d5023bc2821e36d4341</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:57:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>posting.position</element>
+            <list_id display_value="x_snc_position_man_posting_potential_candidate" element="NULL" name="x_snc_position_man_posting_potential_candidate" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">63cdcfce97eb81d05076bff3a253af86</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:57:09</sys_created_on>
+            <sys_id>73db99f347b34d5023bc2821e36d4342</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:57:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>source</element>
+            <list_id display_value="x_snc_position_man_posting_potential_candidate" element="NULL" name="x_snc_position_man_posting_potential_candidate" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">63cdcfce97eb81d05076bff3a253af86</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:57:09</sys_created_on>
+            <sys_id>77db99f347b34d5023bc2821e36d4342</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:57:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>skill_alignment_percentage</element>
+            <list_id display_value="x_snc_position_man_posting_potential_candidate" element="NULL" name="x_snc_position_man_posting_potential_candidate" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">63cdcfce97eb81d05076bff3a253af86</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:57:09</sys_created_on>
+            <sys_id>7bdb99f347b34d5023bc2821e36d4342</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:57:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>skill_alignment_count</element>
+            <list_id display_value="x_snc_position_man_posting_potential_candidate" element="NULL" name="x_snc_position_man_posting_potential_candidate" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">63cdcfce97eb81d05076bff3a253af86</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:57:09</sys_created_on>
+            <sys_id>7fdb99f347b34d5023bc2821e36d4342</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:57:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_updated_on</element>
+            <list_id display_value="x_snc_position_man_posting_potential_candidate" element="NULL" name="x_snc_position_man_posting_potential_candidate" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">63cdcfce97eb81d05076bff3a253af86</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:57:09</sys_created_on>
+            <sys_id>73db99f347b34d5023bc2821e36d4343</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:57:09</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_snc_position_man_posting_potential_candidate</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:57:09</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>63cdcfce97eb81d05076bff3a253af86</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_position_man_posting_potential_candidate</sys_name>
+            <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+            <sys_update_name>sys_ui_list_x_snc_position_man_posting_potential_candidate_null</sys_update_name>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:57:09</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

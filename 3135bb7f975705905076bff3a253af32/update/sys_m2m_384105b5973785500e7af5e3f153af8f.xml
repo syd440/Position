@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_m2m">
+    <sys_m2m action="INSERT_OR_UPDATE">
+        <from_table>x_snc_position_man_posting</from_table>
+        <m2m_from_field>posting</m2m_from_field>
+        <m2m_from_label>Skills</m2m_from_label>
+        <m2m_table>x_snc_position_man_posting_has_skill</m2m_table>
+        <m2m_to_field>skill</m2m_to_field>
+        <m2m_to_label>Postings</m2m_to_label>
+        <sys_class_name>sys_m2m</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-31 20:56:19</sys_created_on>
+        <sys_id>384105b5973785500e7af5e3f153af8f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_position_man_posting_has_skill</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sys_m2m_384105b5973785500e7af5e3f153af8f</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-05-31 20:56:19</sys_updated_on>
+        <to_table>cmn_skill</to_table>
+    </sys_m2m>
+</record_update>

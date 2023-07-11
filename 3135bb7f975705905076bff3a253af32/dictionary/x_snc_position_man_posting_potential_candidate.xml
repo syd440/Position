@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="b0fabd4d97abc9905076bff3a253af3c" label="Potential Candidate" max_length="40" name="x_snc_position_man_posting_potential_candidate" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Candidate notes" max_length="10000" name="candidate_notes" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Comments" max_length="4000" name="comments" type="journal_input"/>
+        <element attributes="edge_encryption_enabled=true" calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;// Add your code here&#10;&#9;return current.getDisplayValue('potential_candidate');  // return the calculated value&#10;&#10;})(current);" display="true" label="Name" max_length="250" name="display" read_only="true" type="string" virtual="true"/>
+        <element attributes="edge_encryption_enabled=true" label="Performance Review Summary" max_length="40" name="performance_review_summary" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Posting" mandatory="true" max_length="32" name="posting" reference="x_snc_position_man_posting" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Candidate" mandatory="true" max_length="32" name="potential_candidate" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;var userSkillCount = 0;&#10;&#9;var postingSkills = current.posting.required_skills || '';&#10;&#9;var postingSkillsArr = [];&#10;&#10;&#9;if(postingSkills) {&#10;&#9;&#9;postingSkillsArr = postingSkills.split(',');&#10;&#9;}&#10;&#10;&#9;var postingSkillCount = postingSkillsArr.length;&#10;&#10;&#9;for(var i = 0; i &lt; postingSkillsArr.length; i++) {&#10;&#9;&#9;var userSkill = new GlideRecord('sys_user_has_skill');&#10;&#9;&#9;userSkill.addEncodedQuery('user=' + current.getValue('potential_candidate') + '^skill=' + postingSkillsArr[i]);&#10;&#9;&#9;userSkill.query();&#10;&#10;&#9;&#9;if(userSkill.next()) {&#10;&#9;&#9;&#9;userSkillCount++;&#10;&#9;&#9;}&#10;&#9;}&#10;&#9;&#10;&#9;return userSkillCount.toString() + &quot; of &quot; + postingSkillCount.toString() + &quot; skills&quot; ;  // return the calculated value&#10;&#10;})(current);" label="Skill alignment (count)" max_length="250" name="skill_alignment_count" type="string" virtual="true"/>
+        <element attributes="edge_encryption_enabled=true" calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;var skillPercentage = 0;&#10;&#9;var userSkillCount = 0;&#10;&#10;&#9;var postingSkills = current.posting.required_skills || '';&#10;&#9;var postingSkillsArr = [];&#10;&#10;&#9;if(postingSkills) {&#10;&#9;&#9;postingSkillsArr = postingSkills.split(',');&#10;&#9;}&#10;&#10;&#9;var postingSkillCount = postingSkillsArr.length;&#10;&#10;&#9;for(var i = 0; i &lt; postingSkillsArr.length; i++) {&#10;&#9;&#9;var userSkill = new GlideRecord('sys_user_has_skill');&#10;&#9;&#9;userSkill.addEncodedQuery('user=' + current.getValue('potential_candidate') + '^skill=' + postingSkillsArr[i]);&#10;&#9;&#9;userSkill.query();&#10;&#10;&#9;&#9;if(userSkill.next()) {&#10;&#9;&#9;&#9;userSkillCount++;&#10;&#9;&#9;}&#10;&#9;}&#10;&#10;&#9;if(postingSkillCount &gt; 0) {&#10;&#9;&#9;skillPercentage = ((userSkillCount / postingSkillCount) * 100).toFixed(2);&#10;&#9;}&#10;&#10;&#9;return skillPercentage;&#10;&#10;})(current);" label="Skill alignment %" max_length="15" name="skill_alignment_percentage" read_only="true" type="percent_complete" virtual="true"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="system sourced" label="Source" max_length="40" name="source" type="string">
+            <choice>
+                <element inactive_on_update="false" label="System Sourced" sequence="0" value="system sourced"/>
+                <element inactive_on_update="false" label="Employee Application" sequence="1" value="employee application"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="posting"/>
+        </index>
+        <index name="index2">
+            <element name="potential_candidate"/>
+        </index>
+    </element>
+</database>

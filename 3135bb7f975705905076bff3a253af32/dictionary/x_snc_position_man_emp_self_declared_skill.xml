@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="04127ad247b3055023bc2821e36d43b7" extends="task" label="Self-Declared Skill" max_length="40" name="x_snc_position_man_emp_self_declared_skill" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" calculation="(function calculatedFieldValue(current) {&#10;&#10;&#9;return 'Self-Declared Skill: ' + current.getDisplayValue('skill') + ' for ' + current.getDisplayValue('opened_by');  // return the calculated value&#10;&#10;})(current);" display="true" label="Short description" max_length="250" name="display" read_only="true" type="string" virtual="true"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Skill" mandatory="true" max_length="32" name="skill" reference="cmn_skill" type="reference"/>
+    </element>
+</database>

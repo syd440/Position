@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-17 06:27:29</sys_created_on>
+        <sys_id>a5e475c197abc9905076bff3a253af72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_snc_position_man_posting.x_snc_position_man.posting_user</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_security_acl display_value="x_snc_position_man_posting">65e475c197abc9905076bff3a253af6e</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_a5e475c197abc9905076bff3a253af72</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-05-17 06:27:29</sys_updated_on>
+        <sys_user_role display_value="x_snc_position_man.posting_user" name="x_snc_position_man.posting_user">5de4b589976bc9905076bff3a253af45</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>

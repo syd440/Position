@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category">
+    <sc_category action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <entitlement_script/>
+        <header_icon/>
+        <homepage_image/>
+        <homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer>
+        <icon/>
+        <image/>
+        <location/>
+        <mobile_hide_description>false</mobile_hide_description>
+        <mobile_picture/>
+        <mobile_subcategory_render_type>list</mobile_subcategory_render_type>
+        <module/>
+        <order>0</order>
+        <parent/>
+        <roles/>
+        <sc_catalog display_value="Human Resources Catalog">7b0370019f22120047a2d126c42e7075</sc_catalog>
+        <sys_class_name>sc_category</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-02 21:03:18</sys_created_on>
+        <sys_id>d7b6d39247b7055023bc2821e36d4398</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Employee Development</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sc_category_d7b6d39247b7055023bc2821e36d4398</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-02 21:03:49</sys_updated_on>
+        <title>Employee Development</title>
+    </sc_category>
+    <sys_translated_text action="delete_multiple" query="documentkey=d7b6d39247b7055023bc2821e36d4398"/>
+</record_update>

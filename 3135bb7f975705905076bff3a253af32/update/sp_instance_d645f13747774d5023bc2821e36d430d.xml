@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">1a45f13747774d5023bc2821e36d4306</sp_column>
+        <sp_widget display_value="Request Fields">96cf39f3d7230200a9addd173e24d412</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-07 05:48:11</sys_created_on>
+        <sys_id>d645f13747774d5023bc2821e36d430d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Request Fields</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_instance_d645f13747774d5023bc2821e36d430d</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-07 05:48:11</sys_updated_on>
+        <title>Request Fields</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"pickup_msg": "${Requests are picked up within <br/> 4 hours (M-F 9-5)}"
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=d645f13747774d5023bc2821e36d430d"/>
+</record_update>

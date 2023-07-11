@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	
+	c.myskillAttainment = function() {
+		var width = (c.data.userSkills.length / c.data.positionSkills.length) * 100;
+		var progress = width.toFixed(2).toString() + '%';
+		
+		return {'width': progress};
+	}
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.skill-attainment-container {
+  margin-bottom: 2rem;
+
+  &gt; p {
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    font-size: 3rem;
+    font-weight: 600;
+    color: $brand-success;
+  }
+}
+
+.attainment-bar {
+  width: 100%;
+  height: 1rem;
+  border-radius: 3rem;
+  background-color: #DADDE2;
+
+  p {
+    margin: 0;
+  }
+}
+
+.my-attainment-bar {
+  height: 1rem;
+  border-radius: 3rem;
+  background-color: $brand-success;
+}
+
+.my-skills-container {
+  margin-bottom: 2rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.required-skills-container {
+  margin-bottom: 1rem;
+
+  a {
+    display: block;
+    margin: 0;
+  }
+}
+
+label {
+  font-weight: 600; 
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title</field_list>
+        <has_preview>false</has_preview>
+        <id>position-management-position-skills</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Position Skills</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	var title = options.title || "Skills";
+	data.title = gs.getMessage(title);
+
+	data.positionID = $sp.getParameter('position_id');
+	data.table = "x_snc_position_man_posting";
+
+	data.positionSkills = getPositionSkills(data.table, data.positionID);
+	data.userSkills = getUserSkills(gs.getUserID(), data.positionSkills);
+
+	//$sp.log(data.positionSkills);
+	//$sp.log(data.userSkills);
+
+	function getPositionSkills(table, sysID) {
+		var arr = [];	
+		var skillArr = [];
+
+		var gr = new GlideRecord(table);
+
+		if(gr.get(sysID)) {
+			var requiredSkills = gr.getValue('required_skills');
+
+			if(requiredSkills) {
+				skillArr = requiredSkills.split(',');
+			}
+
+			for(var i = 0; i < skillArr.length; i++) {
+				var skill = new GlideRecord('cmn_skill');
+
+				if(skill.get(skillArr[i])) {
+					arr.push({
+						sysID: skill.getUniqueValue(),
+						skill: skill.getValue('name'),
+						skillID: skill.getUniqueValue(),
+						userHasSkill: checkIfUserHasSkill(gs.getUserID(), skill.getUniqueValue())
+					});
+				}
+			}
+		}
+
+		return arr;
+	}
+
+	function getUserSkills(userID, positionSkills) {
+		var arr = [];
+
+		for(var i = 0; i < positionSkills.length; i++) {
+			var skill = new GlideRecord('sys_user_has_skill');				
+			skill.addEncodedQuery('user=' + userID + '^skill=' + positionSkills[i].skillID);
+			skill.query();
+
+			if(skill.next()) {
+				arr.push({
+					sysID: skill.getUniqueValue(),
+					skill: skill.getDisplayValue('skill'),
+					skillID: skill.getValue('skill')
+				});
+			}
+		}
+
+		return arr;
+	}
+
+	function checkIfUserHasSkill(userID, skillID) {
+		var userHasSkill = false;
+
+		var skill = new GlideRecord('sys_user_has_skill');
+		skill.addEncodedQuery('user=' + userID + '^skill=' + skillID);
+		skill.query();
+
+		if(skill.next()) {
+			userHasSkill = true;
+		}
+
+		return userHasSkill;
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 11:21:28</sys_created_on>
+        <sys_id>4871806d97a38d905076bff3a253af82</sys_id>
+        <sys_mod_count>51</sys_mod_count>
+        <sys_name>Position Skills</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_4871806d97a38d905076bff3a253af82</sys_update_name>
+        <sys_updated_by>madison.spina</sys_updated_by>
+        <sys_updated_on>2022-08-23 23:49:31</sys_updated_on>
+        <template><![CDATA[<div class="position-skills" ng-if="data.positionSkills.length>0">
+  <div class="panel panel-{{options.color}} b">
+    <div class="panel-heading"> 
+      <h4 class="panel-title">
+        <fa ng-if="::options.glyph.length" name="{{::options.glyph}}" class="m-r-sm" />{{data.title}}</h4>
+    </div>
+    <div class="panel-body">
+      <div class="skill-attainment-container">
+        <p><span>{{data.userSkills.length}}</span> of {{data.positionSkills.length}} ${skills attained}</p>
+        <div class="attainment-bar">
+          <div class="my-attainment-bar" ng-style="c.myskillAttainment()"></div>
+        </div>
+      </div>
+      <div class="my-skills-container" ng-if="data.userSkills.length>0">
+        <label>${My Skills}</label>
+        <p ng-repeat="userSkill in data.userSkills">{{userSkill.skill}}</p>
+      </div>
+      <div class="required-skills-container">
+        <label>${Remaining Skills for Position}</label>
+        <a ng-repeat="posSkill in data.positionSkills" ng-if="!posSkill.userHasSkill">{{posSkill.skill}}</a>
+        <p ng-if="data.positionSkills.length==data.userSkills.length">${None}</p>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Human Resources: Core" source="sn_hr_core">d4ac3fff5b311200a4656ede91f91af2</dependency>
+        <min_version>19.0.0</min_version>
+        <sys_created_by>Factory.Dev</sys_created_by>
+        <sys_created_on>2022-12-01 00:11:30</sys_created_on>
+        <sys_id>68a944f89767d110db4b74971153af33</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_updated_by>Factory.Dev</sys_updated_by>
+        <sys_updated_on>2022-12-01 00:11:30</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

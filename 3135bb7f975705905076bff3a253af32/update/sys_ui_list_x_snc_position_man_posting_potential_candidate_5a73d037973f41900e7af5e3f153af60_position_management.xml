@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="x_snc_position_man_posting_potential_candidate" relationship="5a73d037973f41900e7af5e3f153af60" sys_domain="global" table="sys_user_has_skill" version="2" view="Position_Management">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>skill</element>
+            <list_id display_value="sys_user_has_skill" element="NULL" name="sys_user_has_skill" parent="x_snc_position_man_posting_potential_candidate" relationship="5a73d037973f41900e7af5e3f153af60" sys_domain="global" view="2381331197638d905076bff3a253af72">9d6c91f397f381900e7af5e3f153afec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:59:25</sys_created_on>
+            <sys_id>516c91f397f381900e7af5e3f153afee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:59:25</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>skill_level</element>
+            <list_id display_value="sys_user_has_skill" element="NULL" name="sys_user_has_skill" parent="x_snc_position_man_posting_potential_candidate" relationship="5a73d037973f41900e7af5e3f153af60" sys_domain="global" view="2381331197638d905076bff3a253af72">9d6c91f397f381900e7af5e3f153afec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:59:25</sys_created_on>
+            <sys_id>156c913797f381900e7af5e3f153af55</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:59:25</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>inherited</element>
+            <list_id display_value="sys_user_has_skill" element="NULL" name="sys_user_has_skill" parent="x_snc_position_man_posting_potential_candidate" relationship="5a73d037973f41900e7af5e3f153af60" sys_domain="global" view="2381331197638d905076bff3a253af72">9d6c91f397f381900e7af5e3f153afec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:59:25</sys_created_on>
+            <sys_id>196c913797f381900e7af5e3f153af55</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:59:25</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>included_in_skill</element>
+            <list_id display_value="sys_user_has_skill" element="NULL" name="sys_user_has_skill" parent="x_snc_position_man_posting_potential_candidate" relationship="5a73d037973f41900e7af5e3f153af60" sys_domain="global" view="2381331197638d905076bff3a253af72">9d6c91f397f381900e7af5e3f153afec</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:59:25</sys_created_on>
+            <sys_id>1d6c913797f381900e7af5e3f153af55</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:59:25</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>sys_user_has_skill</name>
+            <parent>x_snc_position_man_posting_potential_candidate</parent>
+            <position/>
+            <relationship display_value="Skills">5a73d037973f41900e7af5e3f153af60</relationship>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 03:59:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9d6c91f397f381900e7af5e3f153afec</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sys_user_has_skill</sys_name>
+            <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+            <sys_update_name>sys_ui_list_x_snc_position_man_posting_potential_candidate_5a73d037973f41900e7af5e3f153af60_Position_Management</sys_update_name>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 03:59:25</sys_updated_on>
+            <sys_user/>
+            <view display_value="Position Management" name="Position_Management">2381331197638d905076bff3a253af72</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

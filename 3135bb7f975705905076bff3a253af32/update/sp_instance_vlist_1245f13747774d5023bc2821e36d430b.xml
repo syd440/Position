@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_vlist">
+    <sp_instance_vlist action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field>short_description</display_field>
+        <field_list/>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>20</maximum_entries>
+        <order>1</order>
+        <order_by>active</order_by>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">1a45f13747774d5023bc2821e36d4306</sp_column>
+        <sp_page display_value="ticket">84af292247132100ba13a5554ee4909e</sp_page>
+        <sp_widget display_value="Requested Items">624afdb3d7230200a9addd173e24d4f4</sp_widget>
+        <sys_class_name>sp_instance_vlist</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-07 05:48:11</sys_created_on>
+        <sys_id>1245f13747774d5023bc2821e36d430b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Requested Items</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_instance_vlist_1245f13747774d5023bc2821e36d430b</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-07 05:48:11</sys_updated_on>
+        <table>sc_req_item</table>
+        <title>Requested Items</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"always_show": {
+		"displayValue": false,
+		"value": false
+	},
+	"image_field": {
+		"value": null,
+		"displayValue": ""
+	},
+	"secondary_fields": {
+		"value": "number",
+		"displayValue": "number"
+	},
+	"panel_body_height": {
+		"value": null,
+		"displayValue": ""
+	},
+	"rounded_images": {
+		"displayValue": false,
+		"value": false
+	},
+	"auto_expand_request_item_stages": {
+		"value": "true",
+		"displayValue": "true"
+	}
+}]]></widget_parameters>
+    </sp_instance_vlist>
+    <sys_translated_text action="delete_multiple" query="documentkey=1245f13747774d5023bc2821e36d430b"/>
+</record_update>

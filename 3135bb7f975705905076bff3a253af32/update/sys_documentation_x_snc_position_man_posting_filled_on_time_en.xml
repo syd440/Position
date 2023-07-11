@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="filled_on_time" label="Filled on time?" language="en" table="x_snc_position_man_posting">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>filled_on_time</element>
+            <help/>
+            <hint/>
+            <label>Filled on time?</label>
+            <language>en</language>
+            <name>x_snc_position_man_posting</name>
+            <plural>Filled on time?s</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-05-17 06:38:18</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Filled on time?</sys_name>
+            <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_position_man_posting_filled_on_time_en</sys_update_name>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-05-17 06:38:18</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+	/* widget controller */
+	var c = this;
+
+	c.positions = c.data.positions;
+
+	c.favoritePosition = function(positionID, isFavorited) {
+		c.server.get({
+			action: 'set-favorite',
+			favoriteID: isFavorited,
+			positionID: positionID
+		}).then(function(resp) {
+			c.positions = resp.data.positions;
+			$scope.$apply();
+		});
+	}
+
+	c.myskillAttainment = function(userSkillCount, positionSkillCount) {
+		var width = (userSkillCount / positionSkillCount) * 100;
+		var progress = width.toFixed(2).toString() + '%';
+
+		return {'width': progress};
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.position-list-row {
+  margin: 0 -1rem;
+}
+
+.position-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.position-item {
+  display: block;
+  padding: 1.6rem;
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  border: 0.1rem solid #DADDE2;
+  border-radius: $border-radius-base;
+
+  .item-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+
+    .btn {
+      border: 0 !important; 
+      background-color: transparent !important;
+      padding: 0;
+      outline: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .fa {
+      color: $brand-primary; 
+    }
+  }
+
+  a {
+    display: block; 
+  }
+  a:focus {
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  h4 {
+    margin: 0 0 0.5rem;
+    color: $text-color;
+  }
+
+  p {
+    color: $text-muted;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+  }
+
+  p:nth-child(3) {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.skill-attainment-container {
+  margin: 2rem 0 1rem;
+
+  &gt; p {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  span {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $brand-success;
+  }
+}
+
+.attainment-bar {
+  width: 100%;
+  height: 0.6rem;
+  border-radius: 3rem;
+  background-color: #DADDE2;
+}
+
+.my-attainment-bar {
+  height: 0.6rem;
+  border-radius: 3rem;
+  background-color: $brand-success;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>position-management-my-develop-skills</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>My Developmental Skills</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	var title = options.title || "My Developmental Skills";
+	data.title = gs.getMessage(title);
+
+	data.table = options.table || "sn_hr_core_position";
+	data.filter = options.filter || "active=true";
+	data.displayField = options.display_field || "position";
+	data.fieldList = options.field_list || "department";
+	data.orderBy = options.order_by || "sys_updated_on";
+	data.orderDirection = options.order_direction || "desc";
+	data.url = options.url || "?id=position_information";
+
+	data.positions = getFavoritedPositions(data.table, data.filter, data.orderBy, data.orderDirection, data.displayField, data.fieldList, data.url);
+	//$sp.log(data.positions);
+
+	if(input && input.action == 'set-favorite') {
+		setFavorite(input.favoriteID, gs.getUserID(), data.table, input.positionID);
+		data.positions = getFavoritedPositions(data.table, data.filter, data.orderBy, data.orderDirection, data.displayField, data.fieldList, data.url);
+	}
+
+	function getFavoritedPositions(table, filter, orderBy, orderDirection, displayField, fieldList, url) {
+		var arr = [];	
+
+		var fav = new GlideRecord('x_snc_position_man_position_favorite');
+		fav.addEncodedQuery('user=' + gs.getUserID() + '^reference_table=' + table);
+
+		if(orderDirection == "asc") {
+			fav.orderBy(orderBy);
+		} else fav.orderByDesc(orderBy);
+
+		fav.query();
+
+		while(fav.next()) {
+			var gr = new GlideRecord(table);
+
+			if(gr.get(fav.getValue('reference_document'))) {
+				arr.push({
+					sysID: gr.getUniqueValue(),
+					display: gr.getDisplayValue(displayField),
+					fields: getFields(gr.getUniqueValue(), table, fieldList),
+					url: url,
+					isFavorited: isFavorited(gs.getUserID(), data.table, gr.getUniqueValue()),
+					positionSkills: getPositionSkills(data.table, gr.getUniqueValue()),
+					userSkills: getUserSkills(gs.getUserID(), getPositionSkills(data.table, gr.getUniqueValue()))
+				});
+			}
+		}
+
+		return arr;
+	}
+
+	function getFields(sysID, table, fieldList) {
+		var arr = [];
+		var fieldArr = fieldList.split(",");
+
+		var gr = new GlideRecord(table);
+
+		if(gr.get(sysID)) {
+			for(var i = 0; i < fieldArr.length; i++) {
+				arr.push({
+					name: fieldArr[i],
+					label: gr[fieldArr[i]].getLabel(),
+					value: gr.getDisplayValue(fieldArr[i])
+				});
+			}
+		}
+
+		return arr;
+	}
+
+	function isFavorited(userID, table, sysID) {
+		var favoriteID = "";
+
+		var gr = new GlideRecord('x_snc_position_man_position_favorite');
+		gr.addEncodedQuery('user=' + userID + '^reference_document=' + sysID + '^reference_table=' + table);
+		gr.query();
+
+		if(gr.next()) {
+			favoriteID = gr.getUniqueValue();
+		}
+
+		return favoriteID;
+	}
+
+	function setFavorite(favoriteID, userID, table, recordID) {
+		var gr = new GlideRecord('x_snc_position_man_position_favorite');
+
+		if(favoriteID && gr.get(favoriteID)) {
+			gr.deleteRecord();
+		} else {
+			gr.initialize();
+			gr.setValue('user', userID);
+			gr.setValue('reference_table', table);
+			gr.setValue('reference_document', recordID);
+			gr.insert();
+		}
+	}
+
+	function getPositionSkills(table, sysID) {
+		var arr = [];	
+
+		var gr = new GlideRecord(table);
+
+		if(gr.get(sysID)) {
+			var skill = new GlideRecord('x_snc_position_man_position_has_skill');
+			skill.addEncodedQuery('position=' + sysID);
+			skill.orderBy('skill');
+			skill.query();
+
+			while(skill.next()) {
+				arr.push({
+					sysID: skill.getUniqueValue(),
+					skill: skill.getDisplayValue('skill'),
+					skillID: skill.getValue('skill')
+				});
+			}
+		}
+
+		return arr;
+	}
+
+	function getUserSkills(userID, positionSkills) {
+		var arr = [];
+
+		for(var i = 0; i < positionSkills.length; i++) {
+			var skill = new GlideRecord('sys_user_has_skill');				
+			skill.addEncodedQuery('user=' + userID + '^skill=' + positionSkills[i].skillID);
+			skill.query();
+
+			if(skill.next()) {
+				arr.push({
+					sysID: skill.getUniqueValue(),
+					skill: skill.getDisplayValue('skill'),
+					skillID: skill.getValue('skill')
+				});
+			}
+		}
+
+		return arr;
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 13:07:18</sys_created_on>
+        <sys_id>6aa9dca597678d905076bff3a253afce</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>My Developmental Skills</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_6aa9dca597678d905076bff3a253afce</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-05-18 13:40:17</sys_updated_on>
+        <template><![CDATA[<div class="my-developmental-skills" ng-if="data.positions.length>0">
+  <div class="panel panel-{{options.color}} b">
+    <div class="panel-heading"> 
+      <h4 class="panel-title">
+        <fa ng-if="::options.glyph.length" name="{{::options.glyph}}" class="m-r-sm" />{{data.title}}</h4>
+    </div>
+    <div class="panel-body">
+      <div class="row position-list-row">
+        <div class="position-list">
+          <div class="position-item" ng-repeat="item in c.positions">
+            <div class="item-header">
+              <button ng-click="c.favoritePosition(item.sysID, item.isFavorited)" type="button" class="btn">
+                <i class="fa fa-star-o" ng-if="!item.isFavorited"></i>
+                <i class="fa fa-star" ng-if="item.isFavorited"></i>
+              </button> 
+            </div>
+            <a href="{{item.url}}&position_id={{item.sysID}}">
+              <h4>{{item.display}}</h4>
+              <p ng-repeat="field in item.fields">{{field.value}}</p>
+              <div class="skill-attainment-container">
+                <p><span>{{item.userSkills.length}}</span> of {{item.positionSkills.length}} ${skills attained}</p>
+                <div class="attainment-bar">
+                  <div class="my-attainment-bar" ng-style="c.myskillAttainment(item.userSkills.length, item.positionSkills.length)" ng-if="item.positionSkills.length>0"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

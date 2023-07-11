@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field>position.department</field>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-17 06:42:34</sys_created_on>
+        <sys_id>a748754997abc9905076bff3a253af00</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>position.department</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sys_ui_policy_action_a748754997abc9905076bff3a253af00</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-05-17 06:42:34</sys_updated_on>
+        <table>x_snc_position_man_posting</table>
+        <ui_policy display_value="Make 'Department' read-only">0238b14997abc9905076bff3a253af28</ui_policy>
+        <visible>ignore</visible>
+    </sys_ui_policy_action>
+</record_update>

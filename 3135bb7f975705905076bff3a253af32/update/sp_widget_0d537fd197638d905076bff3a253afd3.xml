@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+	/* widget controller */
+	var c = this;
+
+	c.positionObj = c.data.positionObj;
+	
+	c.favoritePosition = function(positionID, isFavorited) {
+		c.server.get({
+			action: 'set-favorite',
+			favoriteID: isFavorited,
+			positionID: positionID
+		}).then(function(resp) {
+			c.positionObj = resp.data.positionObj;
+			$scope.$apply();
+		});
+	};
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>div.position-information-header {
+  &gt; .panel.b {
+    background: url("/position-information-header-bg.png") center no-repeat;
+    background-size: cover;
+    min-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+
+    &gt; div.panel-heading {
+      color: #fff !important; 
+
+      .panel-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 0; 
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.favorite-container {
+  .btn {
+    border: 0 !important; 
+    background-color: transparent !important;
+    padding: 0;
+    outline: 0 !important;
+    box-shadow: none !important;
+    position: absolute;
+    top: 2.4rem;
+    right: 2.4rem;
+  }
+
+  .fa {
+    color: #fff; 
+    font-size: 3rem;
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>position-management-position-info-header</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Position Information Header</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.positionID = $sp.getParameter('position_id');
+	data.table = "x_snc_position_man_posting";
+	data.userID = gs.getUserID();
+
+	data.positionObj = getPositionInfo(data.table, data.positionID);
+
+	if(input && input.action == 'set-favorite') {
+		setFavorite(input.favoriteID, gs.getUserID(), data.table, input.positionID);
+		data.positionObj = getPositionInfo(data.table, input.positionID);
+	}
+
+	function getPositionInfo(table, sysID) {
+		var obj = {
+			sysID: '',
+			name: '',
+			description: '',
+			isFavorited: ''
+		};
+
+		var gr = new GlideRecord(table);
+
+		if(gr.get(sysID)) {
+			obj.sysID = sysID;
+			obj.name = gr.getDisplayValue('title');
+			obj.description = gr.getDisplayValue('short_description');
+			obj.isFavorited = isFavorited(data.userID, table, gr.getUniqueValue());
+		}
+
+		return obj;
+	}
+
+	function isFavorited(userID, table, sysID) {
+		var favoriteID = "";
+
+		var gr = new GlideRecord('x_snc_position_man_position_favorite');
+		gr.addEncodedQuery('user=' + userID + '^reference_document=' + sysID + '^reference_table=' + table);
+		gr.query();
+
+		if(gr.next()) {
+			favoriteID = gr.getUniqueValue();
+		}
+
+		return favoriteID;
+	}
+
+	function setFavorite(favoriteID, userID, table, recordID) {
+		var gr = new GlideRecord('x_snc_position_man_position_favorite');
+
+		if(favoriteID && gr.get(favoriteID)) {
+			gr.deleteRecord();
+		} else {
+			gr.initialize();
+			gr.setValue('user', userID);
+			gr.setValue('reference_table', table);
+			gr.setValue('reference_document', recordID);
+			gr.insert();
+		}
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 10:18:54</sys_created_on>
+        <sys_id>0d537fd197638d905076bff3a253afd3</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Position Information Header</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_0d537fd197638d905076bff3a253afd3</sys_update_name>
+        <sys_updated_by>madison.spina</sys_updated_by>
+        <sys_updated_on>2022-08-24 00:15:46</sys_updated_on>
+        <template><![CDATA[<div class="position-information-header">
+  <div class="panel b">
+    <div class="panel-heading">
+      <h2 class="panel-title">{{data.positionObj.name}}</h2>
+      <p ng-if="data.positionObj.description">{{data.positionObj.description}}</p>
+    </div>
+    <div class="favorite-container">
+      <button ng-click="c.favoritePosition(c.positionObj.sysID, c.positionObj.isFavorited)" type="button" class="btn">
+        <i class="fa fa-star-o" ng-if="!c.positionObj.isFavorited"></i>
+        <i class="fa fa-star" ng-if="c.positionObj.isFavorited"></i>
+      </button> 
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="cmn_skill">
+    <cmn_skill action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <keywords/>
+        <level_type/>
+        <name>Financial Accounting &amp; Reporting</name>
+        <sys_class_name>cmn_skill</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-08 22:05:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b19ede5097cc51100e7af5e3f153af8d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Financial Accounting &amp; Reporting</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>cmn_skill_b19ede5097cc51100e7af5e3f153af8d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-08 22:05:50</sys_updated_on>
+    </cmn_skill>
+</record_update>

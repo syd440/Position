@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">9531c06d97a38d905076bff3a253af41</sp_column>
+        <sp_widget display_value="Position Duties">5f453bd197638d905076bff3a253afce</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 10:28:41</sys_created_on>
+        <sys_id>e0b5739597638d905076bff3a253af1b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Description</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_instance_e0b5739597638d905076bff3a253af1b</sys_update_name>
+        <sys_updated_by>madison.spina</sys_updated_by>
+        <sys_updated_on>2022-08-23 23:53:16</sys_updated_on>
+        <title>Description</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=e0b5739597638d905076bff3a253af1b"/>
+</record_update>

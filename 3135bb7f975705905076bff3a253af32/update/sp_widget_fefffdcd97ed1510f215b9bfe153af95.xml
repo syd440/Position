@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $rootScope) {
+	/* widget controller */
+	var c = this;
+
+	$scope.positionSelection = {
+		displayValue: '',
+		value: '',
+		name: 'position'
+	};
+
+	$scope.skillSelection = {
+		displayValue: '',
+		value: '',
+		name: 'skill'
+	};
+
+	$scope.startDateSelection = '';
+	$scope.typeSelection = '';
+
+	// Type
+	$('#typeSelect').select2({
+		placeholder: 'Type'
+	});
+
+	// Submit filters to Browse Positions
+	$scope.submitFilters = function () {
+		$scope.typeSelection = $('#typeSelect').select2('data');
+
+		var filterObj = {
+			position: $scope.positionSelection,
+			skill: $scope.skillSelection,
+			startDate: $scope.startDateSelection,
+			type: $scope.typeSelection
+		};
+		
+		//console.log(filterObj);
+
+		$rootScope.$broadcast("submit-filters", filterObj);
+	}
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.position-management-position-filters {&#13;
+  margin-top: 2rem;&#13;
+}&#13;
+&#13;
+div.panel {&#13;
+  box-shadow: none;&#13;
+  border: none;&#13;
+}&#13;
+&#13;
+div.panel-body {&#13;
+  padding: 1rem;&#13;
+  display: flex;&#13;
+  justify-content: center;&#13;
+  align-items: center;&#13;
+}&#13;
+&#13;
+.filter-container {&#13;
+  min-width: 22rem;&#13;
+  border-right: 0.3rem solid #d8d8d8;&#13;
+  border-top: 0;&#13;
+  border-bottom: 0;&#13;
+  padding: 2rem;&#13;
+}&#13;
+&#13;
+.select2-container {&#13;
+  .select2-choice {&#13;
+    outline: 0 !important;&#13;
+    box-shadow: none !important;&#13;
+  }&#13;
+}&#13;
+&#13;
+.select2-container-active a.select2-choice {&#13;
+  border: 0.1rem solid #8790A1;&#13;
+}&#13;
+&#13;
+.select2-container, div.select2-container a.select2-choice, div.select2-container-multi ul.select2-choices, input.input-typeahead {&#13;
+  border-radius: 0 !important;&#13;
+}&#13;
+.select2-container-active.select2-container {&#13;
+  outline: 0;&#13;
+  box-shadow: none;&#13;
+&#13;
+  a.select2-choice {&#13;
+    outline: 0;&#13;
+    box-shadow: none;&#13;
+  }&#13;
+}&#13;
+&#13;
+&#13;
+input.form-control {&#13;
+  outline: 0 !important;&#13;
+  box-shadow: none !important;&#13;
+  border-radius: 0;&#13;
+}&#13;
+&#13;
+span.input-group-addon {&#13;
+  background-color: transparent !important;&#13;
+}&#13;
+&#13;
+span.input-group-btn &gt; button.btn {&#13;
+  border: 0.1rem solid #8790A1 !important; &#13;
+  padding: 0.6rem 1rem;&#13;
+}&#13;
+&#13;
+.input-group span.input-group-addon select.form-control {&#13;
+  border-radius: 0;&#13;
+}&#13;
+&#13;
+span.field-has-reference, select, input {&#13;
+  border-radius: 0;&#13;
+}&#13;
+&#13;
+label {&#13;
+  font-size: 1.2rem;&#13;
+  text-transform: uppercase;&#13;
+}&#13;
+&#13;
+.submit-container {&#13;
+  padding: 0 2rem;&#13;
+&#13;
+  button.btn.btn-transparent {&#13;
+    text-transform: uppercase;&#13;
+    font-family: "Libre Franklin", sans-serif;&#13;
+    font-size: 2rem;&#13;
+    font-weight: 700;&#13;
+    color: #44546a !important;&#13;
+    border: 0 !important;&#13;
+    background-color: transparent !important;&#13;
+    outline: 0 !important;&#13;
+    box-shadow: none !important;&#13;
+    padding: 0;&#13;
+  }&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>position-management-position-filters</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Position Management - Position Filters</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+
+	//sn_hr_core_position
+
+	
+	// Start Date filter
+	data.datePicker="";
+	
+	if(input && input.funcName=="OnDate"){
+		//gs.addInfoMessage(input.datePicker);
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>madison.spina</sys_created_by>
+        <sys_created_on>2022-08-24 17:22:32</sys_created_on>
+        <sys_id>fefffdcd97ed1510f215b9bfe153af95</sys_id>
+        <sys_mod_count>125</sys_mod_count>
+        <sys_name>Position Management - Position Filters</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_fefffdcd97ed1510f215b9bfe153af95</sys_update_name>
+        <sys_updated_by>madison.spina</sys_updated_by>
+        <sys_updated_on>2022-08-30 21:36:35</sys_updated_on>
+        <template><![CDATA[<div class="position-management-position-filters">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <!-- Position filter -->
+      <div class="filter-container position-filter-container">
+        <label>Position</label>
+        <sn-record-picker field="positionSelection" table="'sn_hr_core_position'" display-field="'position'" value-field="'sys_id'" search-fields="'position'" page-size="100"></sn-record-picker>
+      </div>
+
+      <!-- Skills filter -->
+      <div class="filter-container skills-filter-container">
+        <label>Required Skill</label>
+        <sn-record-picker field="skillSelection" table="'cmn_skill'" display-field="'name'" value-field="'sys_id'" search-fields="'name'" page-size="100"></sn-record-picker>
+      </div>
+
+      <!-- Start Date filter -->
+      <div class="filter-container start-date-filter-container">
+        <label>Start Date</label>
+        <sp-date-picker field="data.datePicker" ng-model="startDateSelection" sn-change="customDate()" sn-include-time="false" placeholder="Start Date"></sp-date-picker>
+      </div>
+
+      <!-- Type filter -->
+      <div class="filter-container type-filter-container">
+        <label>Type</label>
+        <select name="type" id="typeSelect">
+          <!--<option value="" disabled selected>Type</option>-->
+          <option value="">Any</option>
+          <option value="remote">Remote</option>
+          <option value="flexible">Flexible</option>
+          <option value="on site">On-Site</option>
+        </select>
+      </div>
+      
+      <!-- Sumbit filters -->
+      <div class="submit-container">
+        <button class="btn btn-transparent" ng-click="submitFilters()">${Search Positions}</button>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

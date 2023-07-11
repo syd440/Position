@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ticket_tab_configuration">
+    <ticket_tab_configuration action="INSERT_OR_UPDATE">
+        <advanced>false</advanced>
+        <order>10</order>
+        <parent display_value="x_snc_position_man_emp_self_declared_skill">5741ef1647f7055023bc2821e36d4381</parent>
+        <script><![CDATA[/** * The script should evaluate true/false or `answer` populated with true/false which validates if a tab is visible  * The `current` object refers to the current Task(extension) record  **/ ]]></script>
+        <sys_class_name>ticket_tab_configuration</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-02 21:50:43</sys_created_on>
+        <sys_id>dda1a7d247f7055023bc2821e36d431e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>ticket_tab_configuration_dda1a7d247f7055023bc2821e36d431e</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-02 21:50:43</sys_updated_on>
+        <tab_name>Activity</tab_name>
+        <table>x_snc_position_man_emp_self_declared_skill</table>
+        <type>activity</type>
+        <visible/>
+        <widget/>
+        <widget_param/>
+    </ticket_tab_configuration>
+    <sys_translated_text action="delete_multiple" query="documentkey=dda1a7d247f7055023bc2821e36d431e"/>
+</record_update>

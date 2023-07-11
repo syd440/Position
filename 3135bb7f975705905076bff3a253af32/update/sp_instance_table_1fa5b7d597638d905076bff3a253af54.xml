@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list>number,posted_date,position,industry,type,position.x_snc_position_man_location,start_date,duration</field_list>
+        <filter/>
+        <glyph/>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">9531c06d97a38d905076bff3a253af41</sp_column>
+        <sp_page/>
+        <sp_widget display_value="About Position">c9843bd197638d905076bff3a253afc0</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 10:28:37</sys_created_on>
+        <sys_id>1fa5b7d597638d905076bff3a253af54</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>About</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_instance_table_1fa5b7d597638d905076bff3a253af54</sys_update_name>
+        <sys_updated_by>madison.spina</sys_updated_by>
+        <sys_updated_on>2022-08-23 23:52:58</sys_updated_on>
+        <table>x_snc_position_man_posting</table>
+        <title>About</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=1fa5b7d597638d905076bff3a253af54"/>
+</record_update>

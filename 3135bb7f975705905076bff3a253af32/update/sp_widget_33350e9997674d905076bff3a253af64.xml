@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.banner-heading {
+  padding: 0;
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #fff;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title</field_list>
+        <has_preview>false</has_preview>
+        <id>position-management-banner-heading</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Position Management - Banner Heading</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	var title = options.title || "Position Center";
+	data.title = gs.getMessage(title);
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 02:18:18</sys_created_on>
+        <sys_id>33350e9997674d905076bff3a253af64</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Position Management - Banner Heading</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_33350e9997674d905076bff3a253af64</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-05-18 02:50:15</sys_updated_on>
+        <template><![CDATA[<div class="position-management-banner-heading">
+  <h1 class="banner-heading">{{data.title}}</h1>
+</div>]]></template>
+    </sp_widget>
+</record_update>

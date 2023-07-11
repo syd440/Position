@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="state" table="x_snc_position_man_emp_self_declared_skill" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <name>x_snc_position_man_emp_self_declared_skill</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-02 18:47:33</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>state</sys_name>
+            <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+            <sys_update_name>sys_choice_x_snc_position_man_emp_self_declared_skill_state</sys_update_name>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-02 18:47:33</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Pending</label>
+            <language>en</language>
+            <name>x_snc_position_man_emp_self_declared_skill</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-02 18:47:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-02 18:47:33</sys_updated_on>
+            <value>-5</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Open</label>
+            <language>en</language>
+            <name>x_snc_position_man_emp_self_declared_skill</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-02 18:47:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 04:04:44</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Unconfirmed</label>
+            <language>en</language>
+            <name>x_snc_position_man_emp_self_declared_skill</name>
+            <sequence>15</sequence>
+            <synonyms/>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-07 04:05:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 04:05:25</sys_updated_on>
+            <value>10</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Closed Complete</label>
+            <language>en</language>
+            <name>x_snc_position_man_emp_self_declared_skill</name>
+            <sequence>20</sequence>
+            <synonyms/>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-06-02 18:47:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-06-07 04:04:48</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

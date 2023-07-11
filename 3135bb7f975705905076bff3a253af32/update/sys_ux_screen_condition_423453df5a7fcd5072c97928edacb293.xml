@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_screen_condition">
+    <sys_ux_screen_condition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions_params_mapping/>
+        <is_result_memoizable>false</is_result_memoizable>
+        <screen display_value="Agent Assist">0a3453df4a7fcd508ea40ea20ca58493</screen>
+        <screen_condition/>
+        <script><![CDATA[(function canShowAA(params) {
+    return new x_snc_position_man.workspaceStarterExpUtils().checkContextualConfig(params.table);
+})(inputProperties);]]></script>
+        <scripted_condition>true</scripted_condition>
+        <sys_class_name>sys_ux_screen_condition</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-05 23:25:59</sys_created_on>
+        <sys_id>423453df5a7fcd5072c97928edacb293</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sys_ux_screen_condition_423453df5a7fcd5072c97928edacb293</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-05 23:25:59</sys_updated_on>
+    </sys_ux_screen_condition>
+</record_update>

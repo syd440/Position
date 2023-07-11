@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="7f8dd4c397d3d1907ee475c11153af89" label="Position" max_length="40" name="sn_hr_core_position" type="collection">
+        <element label="Description" max_length="1000" name="x_snc_position_man_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Position description" max_length="5000" name="x_snc_position_man_duties" type="html"/>
+        <element label="Education" max_length="250" name="x_snc_position_man_education" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Location" max_length="32" name="x_snc_position_man_location" reference="cmn_location" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,no_sort=true,slushbucket_ref_no_expand=true" label="Required skill(s)" max_length="1024" name="x_snc_position_man_required_skills" reference="cmn_skill" type="glide_list"/>
+        <element label="Security clearance required" max_length="250" name="x_snc_position_man_security_clearance_required" type="string"/>
+        <element label="Travel required" max_length="250" name="x_snc_position_man_travel_required" type="string"/>
+        <index name="index">
+            <element name="x_snc_position_man_location"/>
+        </index>
+    </element>
+</database>

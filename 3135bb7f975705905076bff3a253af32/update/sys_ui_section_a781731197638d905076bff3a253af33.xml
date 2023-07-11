@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="a781731197638d905076bff3a253af33" sys_domain="global" table="sn_hr_core_position" version="3" view="Position_Management">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>position</element>
+            <position>0</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>68b29a3897a5d110f215b9bfe153af1d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>department</element>
+            <position>1</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>ecb29a3897a5d110f215b9bfe153af1d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_snc_position_man_location</element>
+            <position>2</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>60b29a3897a5d110f215b9bfe153af1e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>e0b29a3897a5d110f215b9bfe153af1e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>4</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>64b29a3897a5d110f215b9bfe153af1e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_snc_position_man_education</element>
+            <position>5</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>e4b29a3897a5d110f215b9bfe153af1e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_grade</element>
+            <position>6</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>68b29a3897a5d110f215b9bfe153af1e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>7</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>e8b29a3897a5d110f215b9bfe153af1e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>x_snc_position_man_duties</element>
+            <position>8</position>
+            <sys_created_by>madison.spina</sys_created_by>
+            <sys_created_on>2022-08-24 00:04:46</sys_created_on>
+            <sys_id>6cb29a3897a5d110f215b9bfe153af1e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="sn_hr_core_position" sys_domain="global" view="2381331197638d905076bff3a253af72">a781731197638d905076bff3a253af33</sys_ui_section>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-24 00:04:46</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>sn_hr_core_position</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-05-18 10:10:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a781731197638d905076bff3a253af33</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sn_hr_core_position</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+            <sys_update_name>sys_ui_section_a781731197638d905076bff3a253af33</sys_update_name>
+            <sys_updated_by>workflow.factory</sys_updated_by>
+            <sys_updated_on>2022-05-18 10:10:37</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Position Management" name="Position_Management">2381331197638d905076bff3a253af72</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

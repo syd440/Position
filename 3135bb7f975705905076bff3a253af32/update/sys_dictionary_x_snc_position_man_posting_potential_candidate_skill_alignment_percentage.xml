@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_dictionary action="INSERT_OR_UPDATE" element="skill_alignment_percentage" table="x_snc_position_man_posting_potential_candidate">
+        <active>true</active>
+        <array>false</array>
+        <attributes>edge_encryption_enabled=true</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	var skillPercentage = 0;
+	var userSkillCount = 0;
+
+	var postingSkills = current.posting.required_skills || '';
+	var postingSkillsArr = [];
+
+	if(postingSkills) {
+		postingSkillsArr = postingSkills.split(',');
+	}
+
+	var postingSkillCount = postingSkillsArr.length;
+
+	for(var i = 0; i < postingSkillsArr.length; i++) {
+		var userSkill = new GlideRecord('sys_user_has_skill');
+		userSkill.addEncodedQuery('user=' + current.getValue('potential_candidate') + '^skill=' + postingSkillsArr[i]);
+		userSkill.query();
+
+		if(userSkill.next()) {
+			userSkillCount++;
+		}
+	}
+
+	if(postingSkillCount > 0) {
+		skillPercentage = ((userSkillCount / postingSkillCount) * 100).toFixed(2);
+	}
+
+	return skillPercentage;
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Skill alignment %</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>skill_alignment_percentage</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <internal_type display_value="">percent_complete</internal_type>
+        <mandatory>false</mandatory>
+        <max_length>15</max_length>
+        <name>x_snc_position_man_posting_potential_candidate</name>
+        <next_element/>
+        <primary>false</primary>
+        <read_only>true</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_dictionary</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 20:04:18</sys_created_on>
+        <sys_name>Skill alignment %</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sys_dictionary_x_snc_position_man_posting_potential_candidate_skill_alignment_percentage</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-05 23:15:07</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>true</virtual>
+        <virtual_type/>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_dictionary>
+</record_update>

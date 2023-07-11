@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $element) {
+	/* widget controller */
+	var c = this;
+
+	$element.find('.new-hire-card').css("background", c.data.background);
+	$element.find('.instance-heading').css("color", c.data.font_color);
+	$element.find('.donut-text').css("color", c.data.font_color);
+	$element.find('.donut-value').css("color", c.data.stroke_color);
+	$element.find('td').css("color", c.data.font_color);
+	$element.find('th').css("color", c.data.font_color);
+	$element.find('.symbol').css("color", c.data.stroke_color);
+
+	$('.count').each(function() {
+		$(this).prop('counter', 0).animate({
+			counter: c.data.kpi
+		}, {
+			duration: 1000,
+			easing: 'swing',
+			step: function(now) {
+				$(this).text(Math.ceil(now));
+			}
+		});
+	});
+	
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.card-container {
+  box-shadow: 0 0.4rem 0.8rem 0 rgba(23, 40 ,52 , 8%);
+  min-height: 20rem;
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+  border-radius: .6rem;
+  padding: 3rem;
+  margin-top: 3rem;
+  padding-bottom: 0rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 2rem;
+  z-index:1;
+  margin: 0 0 1.5rem;
+}
+
+.graph-container {
+  display:flex;
+}
+
+.semi-donut {
+  text-align: -webkit-center;
+  margin-top: 1rem;
+}
+
+td a {
+  color:$text-color;
+}
+
+// ===================Semi Donut Chart model-2========================
+
+.semi-donut-model-2 {
+  width: 300px;
+  height: 150px;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  border-radius: 150px 150px 0 0;
+  overflow: hidden;
+  color:red;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing : border-box;
+  --fill: $success ;
+  &amp;:before, &amp;:after{
+    content: '';
+    width: 300px;
+    height: 150px;
+    border:15px solid var(--fill);
+    border-top: none;
+    position: absolute;
+    transform-origin :50%  0% 0;
+    border-radius: 0 0 300px 300px ;
+    box-sizing : border-box;
+    left: 0;
+    top: 100%;
+  }
+  &amp;:before {
+    border-color:rgba(0,0,0,.15);
+    transform: rotate(180deg);
+  }
+  &amp;:after{
+    z-index: 3;
+    animation : 1s fillGraphAnimation ease-in;
+    transform: rotate( calc( 1deg * ( var(--percentage) * 1.8 ) ) );
+  }
+  &amp;:hover{
+    &amp;:after{
+      opacity: .8;
+      cursor: pointer;
+    }
+  }
+}
+
+.donut-label{
+  font-family: sans-serif;
+  text-align: center;
+  margin-top: -8.5rem;
+  padding: 0px 90px;
+}
+
+.donut-text{
+  font-size: 15px;
+  margin-bottom: -8px;
+}
+
+.donut-value{
+  font-size: 45px;
+}
+
+.symbol{
+  font-size:42px;
+}
+
+@keyframes fillAnimation{
+  0%{transform : rotate(-45deg);}
+  50%{transform: rotate(135deg);}
+}
+
+@keyframes fillGraphAnimation{
+  0%{transform: rotate(0deg);}
+  50%{transform: rotate(180deg);}
+}
+
+/* ********************* CSS For List * ********************** */
+.new-hire-list {
+  //margin-top:35px;
+}
+
+td, th{
+  border:none !important;
+  font-family: sans-serif;
+  vertical-align: middle !important;
+  font-size:1.4rem;
+}
+
+td a {
+  color: $brand-primary;
+  //text-decoration: underline;
+}
+
+.avatar {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  padding: 4px;
+  /* margin-top: 0px; */
+}
+
+@media (max-width: 991px) {
+  div.table-responsive {
+    margin-top: 3rem;
+  }
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>position-management-team-skills-gaps</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>My Team's Skills Gaps</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	data.url = options.url || "?id=employee_profile";
+
+	var title = options.title || "My Team's Skills Gap";
+	data.title = gs.getMessage(title);
+
+	data.table = 'sn_hr_core_position';
+
+	var directReports = getDirectReports(gs.getUserID());
+
+	if(directReports.length <= 0) {
+		directReports = [{
+			name: 'Craig Parks',
+			userID: '6689ad503b54445052ca655593efc4d8',
+			position: 'Senior Customer Support Manager',
+			positionID: '1c4f42101b26141030e4edbbbc4bcba9',
+			img: 'craig.png',
+			positionSkills: getPositionSkills(data.table, '1c4f42101b26141030e4edbbbc4bcba9'),
+			userSkills: getUserSkills('6689ad503b54445052ca655593efc4d8', getPositionSkills(data.table, '1c4f42101b26141030e4edbbbc4bcba9')),
+			skillsAttained: getSkillsAttained(data.table, '1c4f42101b26141030e4edbbbc4bcba9', '6689ad503b54445052ca655593efc4d8')
+		}, {
+			name: 'Emily Scollan',
+			userID: 'c3b2c277db564b00ae3e9646db9619c0',
+			position: 'Customer Service Manager',
+			positionID: 'ddbf4a101b26141030e4edbbbc4bcb4a',
+			img: 'emily.png',
+			positionSkills: getPositionSkills(data.table, 'ddbf4a101b26141030e4edbbbc4bcb4a'),
+			userSkills: getUserSkills('c3b2c277db564b00ae3e9646db9619c0', getPositionSkills(data.table, 'ddbf4a101b26141030e4edbbbc4bcb4a')),
+			skillsAttained: getSkillsAttained(data.table, 'ddbf4a101b26141030e4edbbbc4bcb4a', 'c3b2c277db564b00ae3e9646db9619c0')
+		}, {
+			name: 'Nick Newman',
+			userID: '7b6dbf91db7f23008116ffb41d9619d0',
+			position: 'Senior Customer Support Manager',
+			positionID: '1c4f42101b26141030e4edbbbc4bcba9',
+			img: 'sam.png',
+			positionSkills: getPositionSkills(data.table, '1c4f42101b26141030e4edbbbc4bcba9'),
+			userSkills: getUserSkills('7b6dbf91db7f23008116ffb41d9619d0', getPositionSkills(data.table, '1c4f42101b26141030e4edbbbc4bcba9')),
+			skillsAttained: getSkillsAttained(data.table, '1c4f42101b26141030e4edbbbc4bcba9', '7b6dbf91db7f23008116ffb41d9619d0')
+		}];
+	}
+
+	data.directReports = directReports;
+	//$sp.log(data.directReports)
+
+	data.totalSkillAttainmentPercentage = getTotalSkillAttainmentPercentage(data.directReports);
+
+	function getSkillsAttained(table, sysID, userID) {
+		var positionSkills = getPositionSkills(table, sysID);
+
+		if(positionSkills.length == 0) {
+			return gs.getMessage('None');
+		} else {
+			var userSkills = getUserSkills(userID, positionSkills);
+			return userSkills.length.toString() + ' / ' + positionSkills.length.toString();
+		}
+	}
+
+	function getTotalSkillAttainmentPercentage(directReports) {
+		var percentage = 0;
+		var positionSkillsCount = 0;
+		var userSkillsCount = 0;
+
+		for(var i = 0; i < directReports.length; i++) {
+			if(directReports[i].positionSkills.length > 0) {
+				positionSkillsCount = positionSkillsCount + directReports[i].positionSkills.length;
+			}
+
+			if(directReports[i].userSkills.length > 0) {
+				userSkillsCount = userSkillsCount + directReports[i].userSkills.length;
+			}
+		}
+
+		percentage = (userSkillsCount / positionSkillsCount) * 100;
+
+		return Math.round(percentage);
+	}
+
+	function getPositionSkills(table, sysID) {
+		var arr = [];	
+
+		var gr = new GlideRecord(table);
+
+		if(gr.get(sysID)) {
+			var skill = new GlideRecord('x_snc_position_man_position_has_skill');
+			skill.addEncodedQuery('position=' + sysID);
+			skill.orderBy('skill');
+			skill.query();
+
+			while(skill.next()) {
+				arr.push({
+					sysID: skill.getUniqueValue(),
+					skill: skill.getDisplayValue('skill'),
+					skillID: skill.getValue('skill')
+				});
+			}
+		}
+
+		return arr;
+	}
+
+	function getUserSkills(userID, positionSkills) {
+		var arr = [];
+
+		for(var i = 0; i < positionSkills.length; i++) {
+			var skill = new GlideRecord('sys_user_has_skill');				
+			skill.addEncodedQuery('user=' + userID + '^skill=' + positionSkills[i].skillID);
+			skill.query();
+
+			if(skill.next()) {
+				arr.push({
+					sysID: skill.getUniqueValue(),
+					skill: skill.getDisplayValue('skill'),
+					skillID: skill.getValue('skill')
+				});
+			}
+		}
+
+		return arr;
+	}
+
+	function getDirectReports(managerID) {
+		var arr = [];
+
+		var hrProfile = new GlideRecord('sn_hr_core_profile');
+		hrProfile.addEncodedQuery('user.manager=' + managerID + '^positionISNOTEMPTY');
+		hrProfile.orderBy('user');
+		hrProfile.query();
+
+		while(hrProfile.next()) {
+			arr.push({
+				name: hrProfile.user.name.toString(),
+				userID: hrProfile.getValue('user'),
+				position: hrProfile.getDisplayValue('position'),
+				positionID: hrProfile.getValue('position'),
+				img: hrProfile.user.photo.toString() + '.iix',
+				positionSkills: getPositionSkills(data.table, hrProfile.getValue('position')),
+				userSkills: getUserSkills(hrProfile.getValue('user'), getPositionSkills(data.table, hrProfile.getValue('position'))),
+				skillsAttained: getSkillsAttained(data.table, hrProfile.getValue('position'), hrProfile.getValue('user'))
+			});
+		}
+
+		return arr;
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 13:47:07</sys_created_on>
+        <sys_id>df13aca597a78d905076bff3a253afc8</sys_id>
+        <sys_mod_count>57</sys_mod_count>
+        <sys_name>My Team's Skills Gaps</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_df13aca597a78d905076bff3a253afc8</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-05-18 17:45:16</sys_updated_on>
+        <template><![CDATA[<div class="card-container" id="team-skills-gaps-card">
+  <h2 class="card-title">{{data.title}}</h2>
+  <div class = "row">
+    <div class = "col-md-6 col-lg-6">
+      <div class = "semi-donut">
+        <div class="semi-donut-model-2 margin" style="--percentage : {{data.totalSkillAttainmentPercentage}}; "></div>
+        <div class="donut-label col-md-12 col-lg-12">
+          <div class="donut-text">${Required skills attained} %</div>
+          <div class="count donut-value">{{data.totalSkillAttainmentPercentage}}</div>
+          <div class="count donut-value" ng-if="!data.totalSkillAttainmentPercentage">${N/A}</div>
+        </div>  
+      </div>   
+    </div>
+
+    <div class = "col-md-6 col-lg-6">
+      <div class="table-responsive">
+        <table class = "table table-condensed new-hire-list">
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Required Skills</th>
+          </tr>
+          <tr ng-repeat="dir in data.directReports">
+            <td><img src="{{dir.img}}" class="avatar"></td>
+            <td><a href="{{data.url}}&sys_id={{dir.userID}}">{{dir.name}}</a></td>
+            <td>{{dir.skillsAttained}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+]]></template>
+    </sp_widget>
+</record_update>

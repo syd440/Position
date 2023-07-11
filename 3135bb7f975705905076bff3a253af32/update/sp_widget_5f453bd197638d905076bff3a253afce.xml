@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>ul, ol {
+  padding-left: 2rem; 
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title</field_list>
+        <has_preview>false</has_preview>
+        <id>position-management-position-duties</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Position Duties</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	var title = options.title || "Duties";
+	data.title = gs.getMessage(title);
+	
+	data.positionID = $sp.getParameter('position_id');
+	data.table = "x_snc_position_man_posting";
+	
+	data.duties = getPositionDuties(data.table, data.positionID);
+	
+	function getPositionDuties(table, sysID) {
+		var duties = "";
+		
+		var gr = new GlideRecord(table);
+		
+		if(gr.get(sysID)) {
+			duties = gr.position.x_snc_position_man_duties.toString();
+		}
+		
+		return duties;
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 10:27:17</sys_created_on>
+        <sys_id>5f453bd197638d905076bff3a253afce</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Position Duties</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_5f453bd197638d905076bff3a253afce</sys_update_name>
+        <sys_updated_by>madison.spina</sys_updated_by>
+        <sys_updated_on>2022-08-23 23:48:51</sys_updated_on>
+        <template><![CDATA[<div class="position-duties" ng-if="data.duties">
+  <div class="panel panel-{{options.color}} b">
+    <div class="panel-heading"> 
+      <h4 class="panel-title">
+        <fa ng-if="::options.glyph.length" name="{{::options.glyph}}" class="m-r-sm" />{{data.title}}</h4>
+    </div>
+    <div class="panel-body">
+      <div ng-bind-html="data.duties"></div> 
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

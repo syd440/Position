@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $rootScope, $location) {
+	/* widget controller */
+	var c = this;
+
+	c.filter = c.data.filter.replace('^EQ', '');
+	c.filterBy = '';
+	c.positions = c.data.positions;
+
+	c.favoritePosition = function(positionID, isFavorited) {
+		c.server.get({
+			action: 'set-favorite',
+			filter: c.filter,
+			favoriteID: isFavorited,
+			positionID: positionID
+		}).then(function(resp) {
+			c.positions = resp.data.positions;
+			$scope.$apply();
+		});
+	};
+
+	c.myskillAttainment = function(userSkillCount, positionSkillCount) {
+		var width = (userSkillCount / positionSkillCount) * 100;
+		var progress = width.toFixed(2).toString() + '%';
+
+		return {'width': progress};
+	};
+
+	c.filterItems = function (item) { 
+		if(!c.filterBy) {
+			return item;
+		} else {
+			return item.isFavorited != '';
+		}
+	};
+
+	$rootScope.$on('submit-filters', function(event, resp) {
+		c.filter = c.data.filter.replace('^EQ', '');
+
+		if(resp.position.value) {
+			c.filter = c.filter + "^position=" + resp.position.value;
+		}
+
+		if(resp.skill.value) {
+			c.filter = c.filter + "^required_skillsLIKE" + resp.skill.value;
+		}
+		
+		if(resp.startDate) {
+			c.filter = c.filter + "^start_date>=javascript:gs.dateGenerate('" + resp.startDate + "','end')";
+		}
+		
+		if(resp.type.id) {
+			c.filter = c.filter + "^type=" + resp.type.id;
+		}
+
+		console.log(c.filter);
+
+		c.server.get({
+			action: 'filtered-positions',
+			filter: c.filter
+		}).then(function(resp) {
+			c.positions = resp.data.positions;
+			//$scope.$apply();
+		});
+	});
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.panel-heading {&#13;
+  border: 0 !important; &#13;
+  padding-bottom: 0 !important;&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  justify-content: space-between;&#13;
+&#13;
+  &gt; .panel-title {&#13;
+    font-size: 2rem;&#13;
+    font-weight: 600;&#13;
+  }&#13;
+}&#13;
+&#13;
+.filter-container {&#13;
+  display: flex;&#13;
+  align-items: center;&#13;
+&#13;
+  label {&#13;
+    padding-right: 1rem;&#13;
+  }&#13;
+&#13;
+  select {&#13;
+    padding: 0.6rem 0.8rem; &#13;
+    border-radius: 0;&#13;
+  }&#13;
+}&#13;
+&#13;
+.position-list-row {&#13;
+  margin: 0 -1rem;&#13;
+}&#13;
+&#13;
+.position-list {&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  align-items: stretch;&#13;
+}&#13;
+&#13;
+.position-item {&#13;
+  display: block;&#13;
+  padding: 1.6rem;&#13;
+  width: calc(33.33% - 2rem);&#13;
+  margin: 1rem;&#13;
+  border: 0.1rem solid #DADDE2;&#13;
+  border-radius: $border-radius-base;&#13;
+&#13;
+  .item-header {&#13;
+    display: flex;&#13;
+    justify-content: flex-end;&#13;
+&#13;
+    .btn {&#13;
+      border: 0 !important; &#13;
+      background-color: transparent !important;&#13;
+      padding: 0;&#13;
+      outline: 0 !important;&#13;
+      box-shadow: none !important;&#13;
+    }&#13;
+&#13;
+    .fa {&#13;
+      color: $brand-primary; &#13;
+    }&#13;
+  }&#13;
+&#13;
+  a {&#13;
+    display: block; &#13;
+  }&#13;
+  a:focus {&#13;
+    outline: 0;&#13;
+    border: 0;&#13;
+    box-shadow: none;&#13;
+  }&#13;
+&#13;
+  h4 {&#13;
+    margin: 0 0 0.5rem;&#13;
+    color: $text-color;&#13;
+  }&#13;
+&#13;
+  p {&#13;
+    color: $text-muted;&#13;
+    margin-top: 0.5rem;&#13;
+    margin-bottom: 0;&#13;
+    font-size: 1.4rem;&#13;
+  }&#13;
+&#13;
+  p:nth-child(2) {&#13;
+    font-size: 1.2rem;&#13;
+    font-weight: 300;&#13;
+    margin-top: 0;&#13;
+    margin-bottom: 1rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+.skill-attainment-container {&#13;
+  margin: 2rem 0 1rem;&#13;
+&#13;
+  &gt; p {&#13;
+    margin-bottom: 0.5rem;&#13;
+    font-size: 1.3rem;&#13;
+  }&#13;
+&#13;
+  span {&#13;
+    font-size: 1.6rem;&#13;
+    font-weight: 600;&#13;
+    color: $brand-success;&#13;
+  }&#13;
+}&#13;
+&#13;
+.attainment-bar {&#13;
+  width: 100%;&#13;
+  height: 0.6rem;&#13;
+  border-radius: 3rem;&#13;
+  background-color: #DADDE2;&#13;
+}&#13;
+&#13;
+.my-attainment-bar {&#13;
+  height: 0.6rem;&#13;
+  border-radius: 3rem;&#13;
+  background-color: $brand-success;&#13;
+}&#13;
+</css>
+        <data_table>sp_instance_table</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>title,table,filter,sp_page</field_list>
+        <has_preview>false</has_preview>
+        <id>position-management-browse-positions</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Position Management - Browse Positions</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	var title = options.title || "Browse Positions";
+	data.title = gs.getMessage(title);
+
+	data.table = options.table || "x_snc_position_man_posting";
+	data.filter = options.filter || "state=open";
+	data.displayField = options.display_field || "title";
+	data.fieldList = options.field_list || "number,position.x_snc_position_man_description,duration";
+	data.orderBy = options.order_by || "title";
+	data.orderDirection = options.order_direction || "asc";
+	data.url = options.url || "";
+
+	data.positions = getActivePositions(data.table, data.filter, data.orderBy, data.orderDirection, data.displayField, data.fieldList, data.url);
+	//$sp.log(data.positions);
+
+	if(input && input.action == 'set-favorite') {
+		setFavorite(input.favoriteID, gs.getUserID(), data.table, input.positionID);
+		data.positions = getActivePositions(data.table, input.filter, data.orderBy, data.orderDirection, data.displayField, data.fieldList, data.url);
+	}
+
+	if(input && input.action == 'filtered-positions') {
+		data.positions = getActivePositions(data.table, input.filter, data.orderBy, data.orderDirection, data.displayField, data.fieldList, data.url);
+		$sp.log(data.positions);
+	}
+
+	function getActivePositions(table, filter, orderBy, orderDirection, displayField, fieldList, url) {
+		var arr = [];	
+
+		var gr = new GlideRecord(table);
+		gr.addEncodedQuery(filter);
+
+		if(orderDirection == "asc") {
+			gr.orderBy(orderBy);
+		} else gr.orderByDesc(orderBy);
+
+		gr.query();
+
+		while(gr.next()) {
+			arr.push({
+				sysID: gr.getUniqueValue(),
+				display: gr.getDisplayValue(displayField),
+				fields: getFields(gr.getUniqueValue(), table, fieldList),
+				url: url,
+				isFavorited: isFavorited(gs.getUserID(), data.table, gr.getUniqueValue()),
+				positionSkills: getPositionSkills(data.table, gr.getUniqueValue()),
+				userSkills: getUserSkills(gs.getUserID(), getPositionSkills(data.table, gr.getUniqueValue()))
+			})
+		}
+
+		return arr;
+	}
+
+	function getFields(sysID, table, fieldList) {
+		var arr = [];
+		var fieldArr = [];
+
+		if(fieldList) {
+			fieldArr = fieldList.split(",");
+		}
+
+		var gr = new GlideRecord(table);
+
+		if(gr.get(sysID)) {
+			for(var i = 0; i < fieldArr.length; i++) {
+				if(fieldArr[i].indexOf('.') != -1) {
+					var fieldRefArr = fieldArr[i].split('.');
+					var gr1 = gr[fieldRefArr[0]].getRefRecord();
+
+					if(gr1.get(gr.getValue(fieldRefArr[0]))) {
+						arr.push({
+							name: fieldArr[i],
+							label: gr1[fieldRefArr[1]].getLabel(),
+							value: gr1.getDisplayValue(fieldRefArr[1])
+						});
+					}
+				} else {
+					arr.push({
+						name: fieldArr[i],
+						label: gr[fieldArr[i]].getLabel(),
+						value: gr.getDisplayValue(fieldArr[i])
+					});
+				}
+			}
+		}
+
+		return arr;
+	}
+
+	function isFavorited(userID, table, sysID) {
+		var favoriteID = "";
+
+		var gr = new GlideRecord('x_snc_position_man_position_favorite');
+		gr.addEncodedQuery('user=' + userID + '^reference_document=' + sysID + '^reference_table=' + table);
+		gr.query();
+
+		if(gr.next()) {
+			favoriteID = gr.getUniqueValue();
+		}
+
+		return favoriteID;
+	}
+
+	function setFavorite(favoriteID, userID, table, recordID) {
+		var gr = new GlideRecord('x_snc_position_man_position_favorite');
+
+		if(favoriteID && gr.get(favoriteID)) {
+			gr.deleteRecord();
+		} else {
+			gr.initialize();
+			gr.setValue('user', userID);
+			gr.setValue('reference_table', table);
+			gr.setValue('reference_document', recordID);
+			gr.insert();
+		}
+	}
+
+	function getPositionSkills(table, sysID) {
+		var arr = [];	
+		var skillArr = [];
+
+		var gr = new GlideRecord(table);
+
+		if(gr.get(sysID)) {
+			var requiredSkills = gr.getValue('required_skills');
+
+			if(requiredSkills) {
+				skillArr = requiredSkills.split(',');
+			}
+
+			for(var i = 0; i < skillArr.length; i++) {
+				var skill = new GlideRecord('cmn_skill');
+
+				if(skill.get(skillArr[i])) {
+					arr.push({
+						skill: skill.getValue('name'),
+						skillID: skill.getUniqueValue()
+					});
+				}
+			}
+		}
+
+		return arr;
+	}
+
+
+	function getUserSkills(userID, positionSkills) {
+		var arr = [];
+
+		for(var i = 0; i < positionSkills.length; i++) {
+			var skill = new GlideRecord('sys_user_has_skill');				
+			skill.addEncodedQuery('user=' + userID + '^skill=' + positionSkills[i].skillID);
+			skill.query();
+
+			if(skill.next()) {
+				arr.push({
+					sysID: skill.getUniqueValue(),
+					skill: skill.getDisplayValue('skill'),
+					skillID: skill.getValue('skill')
+				});
+			}
+		}
+
+		return arr;
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 02:14:22</sys_created_on>
+        <sys_id>925402dd97e34d905076bff3a253af4e</sys_id>
+        <sys_mod_count>120</sys_mod_count>
+        <sys_name>Position Management - Browse Positions</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_925402dd97e34d905076bff3a253af4e</sys_update_name>
+        <sys_updated_by>madison.spina</sys_updated_by>
+        <sys_updated_on>2022-08-25 05:55:33</sys_updated_on>
+        <template><![CDATA[<div class="position-management-browse-positions">
+  <div class="panel panel-{{options.color}} b">
+    <div class="panel-heading" ng-if="data.title"> 
+      <h3 class="panel-title">
+        <fa ng-if="::options.glyph.length" name="{{::options.glyph}}" class="m-r-sm" />{{data.title}}</h3>
+      <div class="filter-container flex-mobile form-inline">
+        <label class="label-padding" for="filterBy">${Filter by}:</label>
+        <select name="filterBy" id="filterBy" class="form-control" ng-model="c.filterBy">
+          <option value="">${All}</option>
+          <option value="my-favorites">${My Favorites}</option>
+        </select>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="row position-list-row">
+        <div class="position-list">
+          <div class="position-item" ng-repeat="item in c.positions | filter: c.filterItems">
+            <div class="item-header">
+              <button ng-click="c.favoritePosition(item.sysID, item.isFavorited)" type="button" class="btn">
+                <i class="fa fa-star-o" ng-if="!item.isFavorited"></i>
+                <i class="fa fa-star" ng-if="item.isFavorited"></i>
+              </button> 
+            </div>
+            <a href="{{item.url}}&position_id={{item.sysID}}">
+              <h4>{{item.display}}</h4>
+              <p ng-repeat="field in item.fields" ng-if="field.value"><span ng-if="field.label!='description' && field.label!='Description' && field.label!='short description' && field.label!='Short description' && field.label!='number' && field.label!='Number'">{{field.label}}: </span>{{field.value}}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

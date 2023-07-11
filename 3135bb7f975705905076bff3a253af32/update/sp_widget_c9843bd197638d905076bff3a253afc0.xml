@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.information-container {&#13;
+  display: flex;&#13;
+  flex-wrap: wrap;&#13;
+  align-items: stretch;&#13;
+  margin: -1rem;&#13;
+}&#13;
+&#13;
+.form-group {&#13;
+  width: calc(50% - 2rem); &#13;
+  margin: 1rem;&#13;
+  &#13;
+  label {&#13;
+    color: $text-muted;&#13;
+    font-weight: 600;&#13;
+  }&#13;
+  &#13;
+  p {&#13;
+    margin-bottom: 0;&#13;
+  }&#13;
+}</css>
+        <data_table>sp_instance_table</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list>table,field_list</field_list>
+        <has_preview>false</has_preview>
+        <id>position-management-about-position</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>About Position</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+	var title = options.title || "About";
+	data.title = gs.getMessage(title);
+	
+	data.positionID = $sp.getParameter('position_id');
+	data.table = options.table || "sn_hr_core_position";
+	data.fieldList = options.field_list || "department,x_snc_position_man_education,x_snc_position_man_travel_required,x_snc_position_man_security_clearance_required";
+	
+	data.positionObj = getPositionInfo(data.table, data.positionID, data.fieldList);
+	
+	function getPositionInfo(table, sysID, fieldList) {
+		var obj = {};	
+
+		var gr = new GlideRecord(table);
+		
+		if(gr.get(sysID)) {
+			obj = {
+				sysID: gr.getUniqueValue(),
+				fields: getFields(sysID, table, fieldList)
+			}
+		}
+
+		return obj;
+	}
+
+	function getFields(sysID, table, fieldList) {
+		var arr = [];
+		var fieldArr = [];
+
+		if(fieldList) {
+			fieldArr = fieldList.split(",");
+		}
+
+		var gr = new GlideRecord(table);
+
+		if(gr.get(sysID)) {
+			for(var i = 0; i < fieldArr.length; i++) {
+				if(fieldArr[i].indexOf('.') != -1) {
+					var fieldRefArr = fieldArr[i].split('.');
+					var gr1 = gr[fieldRefArr[0]].getRefRecord();
+
+					if(gr1.get(gr.getValue(fieldRefArr[0]))) {
+						arr.push({
+							name: fieldArr[i],
+							label: gr1[fieldRefArr[1]].getLabel(),
+							value: gr1.getDisplayValue(fieldRefArr[1])
+						});
+					}
+				} else {
+					arr.push({
+						name: fieldArr[i],
+						label: gr[fieldArr[i]].getLabel(),
+						value: gr.getDisplayValue(fieldArr[i])
+					});
+				}
+			}
+		}
+
+		return arr;
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-05-18 10:24:14</sys_created_on>
+        <sys_id>c9843bd197638d905076bff3a253afc0</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>About Position</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sp_widget_c9843bd197638d905076bff3a253afc0</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-06 04:28:27</sys_updated_on>
+        <template><![CDATA[<div class="about-position">
+  <div class="panel panel-default b">
+    <div class="panel-heading"> 
+      <h4 class="panel-title">
+        <fa ng-if="::options.glyph.length" name="{{::options.glyph}}" class="m-r-sm" />{{data.title}}</h4>
+    </div>
+    <div class="panel-body">
+      <div class="information-container">
+        <div class="form-group" ng-repeat="field in data.positionObj.fields">
+          <label>{{field.label}}</label>
+          <p>{{field.value}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="66ac6f5597238d905076bff3a253af8a" label="Position Favorite" max_length="40" name="x_snc_position_man_position_favorite" type="collection">
+        <element attributes="edge_encryption_enabled=true" dependent="reference_table" dependent_on_field="reference_table" label="Reference document" max_length="32" name="reference_document" type="document_id" use_dependent_field="true"/>
+        <element attributes="allow_public=true,base_start=true,edge_encryption_enabled=true" label="Reference table" max_length="80" name="reference_table" type="table_name"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="reference_document"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

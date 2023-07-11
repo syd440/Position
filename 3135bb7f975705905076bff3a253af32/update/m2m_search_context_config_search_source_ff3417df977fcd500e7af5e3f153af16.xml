@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_search_context_config_search_source">
+    <m2m_search_context_config_search_source action="INSERT_OR_UPDATE">
+        <order>200</order>
+        <search_context_config display_value="Position Workbench - Workspace Search">023453df9f7fcd50b442efc5e16d9393</search_context_config>
+        <source display_value="Position Workbench - x_snc_position_man_posting_po">9734d3df977fcd500e7af5e3f153af62</source>
+        <sys_class_name>m2m_search_context_config_search_source</sys_class_name>
+        <sys_created_by>workflow.factory</sys_created_by>
+        <sys_created_on>2022-06-05 23:26:05</sys_created_on>
+        <sys_id>ff3417df977fcd500e7af5e3f153af16</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>m2m_search_context_config_search_source_ff3417df977fcd500e7af5e3f153af16</sys_update_name>
+        <sys_updated_by>workflow.factory</sys_updated_by>
+        <sys_updated_on>2022-06-05 23:26:05</sys_updated_on>
+    </m2m_search_context_config_search_source>
+</record_update>

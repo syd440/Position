@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_form_action">
+    <sys_ux_form_action action="INSERT_OR_UPDATE">
+        <action_type>ui_action</action_type>
+        <active>true</active>
+        <declarative_action/>
+        <description/>
+        <name>Start MS Teams Chat with Candidate</name>
+        <specificity>0</specificity>
+        <sys_class_name>sys_ux_form_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-06-09 01:38:35</sys_created_on>
+        <sys_id>ad5f035c97c091100e7af5e3f153afc4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Start MS Teams Chat with Candidate</sys_name>
+        <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+        <sys_update_name>sys_ux_form_action_ad5f035c97c091100e7af5e3f153afc4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-06-09 01:38:35</sys_updated_on>
+        <table>global</table>
+        <ui_action display_value="Start MS Teams Chat with Candidate">d9dec75c97c091100e7af5e3f153afa0</ui_action>
+    </sys_ux_form_action>
+</record_update>

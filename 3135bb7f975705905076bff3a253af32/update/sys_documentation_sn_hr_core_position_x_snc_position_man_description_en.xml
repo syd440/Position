@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="x_snc_position_man_description" label="Description" language="en" table="sn_hr_core_position">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>x_snc_position_man_description</element>
+            <help/>
+            <hint/>
+            <label>Description</label>
+            <language>en</language>
+            <name>sn_hr_core_position</name>
+            <plural>Descriptions</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>workflow.factory</sys_created_by>
+            <sys_created_on>2022-05-18 07:16:13</sys_created_on>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_name>Description</sys_name>
+            <sys_package display_value="Position Management" source="x_snc_position_man">3135bb7f975705905076bff3a253af32</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Position Management">3135bb7f975705905076bff3a253af32</sys_scope>
+            <sys_update_name>sys_documentation_sn_hr_core_position_x_snc_position_man_description_en</sys_update_name>
+            <sys_updated_by>madison.spina</sys_updated_by>
+            <sys_updated_on>2022-08-23 23:58:19</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
